@@ -4,20 +4,14 @@ import { ArrowUpRight } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import { projects } from '../data/projects';
 
-function PhoneMockup({ color = '#c8f542', screenType = 'a' }) {
-  const bars = screenType === 'a'
-    ? ['accent', 'short', 'medium', 'medium', 'short']
-    : ['short', 'accent', 'medium', 'short', 'medium'];
-
+function PhoneMockup({ color = '#c8f542', image }) {
   return (
-    <div className="phone-frame" style={{ borderColor: `${color}18` }}>
-      <div className="phone-screen">
-        {bars.map((b, i) => (
-          <div key={i} className={`phone-ui-bar ${b}`} style={b === 'accent' ? { background: `${color}18`, borderColor: `${color}30` } : {}} />
-        ))}
-        <div className="phone-ui-block" />
-        <div className="phone-ui-block accent-block" style={{ background: `${color}10`, borderColor: `${color}25` }} />
-      </div>
+    <div className="phone-frame" style={{ borderColor: `${color}18`, padding: 0, overflow: 'hidden' }}>
+      <img 
+        src={image} 
+        alt="App Screenshot" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 32 }} 
+      />
     </div>
   );
 }
@@ -86,7 +80,7 @@ export default function Work() {
                 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 20 }}
               >
-                <PhoneMockup color={project.color} screenType={index % 2 === 0 ? 'a' : 'b'} />
+                <PhoneMockup color={project.color} image={project.image} />
               </motion.div>
             </div>
           </motion.div>
