@@ -36,7 +36,9 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic — connect to your preferred service
+    const subject = encodeURIComponent(`New Project Inquiry: ${formData.type}`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+    window.location.href = `mailto:jghafoor06@gmail.com?subject=${subject}&body=${body}`;
     setSent(true);
   };
 
@@ -180,7 +182,7 @@ export default function Contact() {
                   <ArrowUpRight size={12} style={{ marginLeft: 'auto', opacity: 0.4 }} />
                 </a>
                 <a
-                  href="mailto:hello@jahanzaib.dev"
+                  href="mailto:jghafoor06@gmail.com"
                   className="contact-link"
                   data-cursor="button"
                 >
