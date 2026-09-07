@@ -1783,6 +1783,12 @@ img, video {
   user-select: none;
 }
 
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
 /* Hero scroll indicator */
 .scroll-indicator {
   position: absolute;

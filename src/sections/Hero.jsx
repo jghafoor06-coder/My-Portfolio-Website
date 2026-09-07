@@ -40,6 +40,7 @@ export default function Hero() {
     <section id="hero" className="hero" ref={heroRef}>
       {/* Floating decorative phone elements */}
       <motion.div
+        className="desktop-only"
         style={{
           position: 'absolute',
           top: '18%',
@@ -73,6 +74,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
+        className="desktop-only"
         style={{
           position: 'absolute',
           top: '28%',
@@ -103,6 +105,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
+        className="desktop-only"
         style={{
           position: 'absolute',
           bottom: '30%',
