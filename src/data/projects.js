@@ -24,7 +24,7 @@ export const projects = [
     category: 'Food Donation App',
     description:
       'A food donation mobile application that connects hotels and restaurants with people in need by allowing surplus food to be shared and claimed.',
-    tags: ['React Native', 'Firebase'],
+    tags: ['React Native', 'Supabase', 'Resend',],
     problem:
       'An existing web store needed a dedicated mobile app that felt native, fast, and trustworthy — not a simple wrapper around a website.',
     role: 'Architecture design, React Native development, backend API integration.',

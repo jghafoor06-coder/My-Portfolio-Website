@@ -8,7 +8,7 @@ function PlatformPhone({ type }) {
       <div className="platform-label">{isAndroid ? 'Android' : 'iOS'}</div>
       <motion.div
         className={`phone-frame-lg ${isAndroid ? '' : ''}`}
-        style={{ borderColor: isAndroid ? 'rgba(200,245,66,0.12)' : 'rgba(255,255,255,0.08)' }}
+        style={{ borderColor: isAndroid ? 'rgba(200,245,66,0.12)' : 'rgba(255,255,255,0.08)', overflow: 'hidden' }}
         animate={{ y: [0, -10, 0] }}
         transition={{
           duration: isAndroid ? 4.5 : 5.5,
@@ -17,22 +17,12 @@ function PlatformPhone({ type }) {
           delay: isAndroid ? 0 : 1,
         }}
       >
-        <div className={`phone-screen-lg ${isAndroid ? 'android-screen' : 'ios-screen'}`}>
-          {/* Top nav bar */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-            <div style={{ height: 5, width: 60, borderRadius: 2, background: 'rgba(255,255,255,0.08)' }} />
-            <div style={{ height: 20, width: 20, borderRadius: '50%', background: 'rgba(255,255,255,0.06)' }} />
-          </div>
-          {/* Content bars */}
-          <div className="pbar a" />
-          <div className="pbar b" />
-          <div className="pblock" style={{ flex: 0, height: 120 }} />
-          <div style={{ display: 'flex', gap: 8 }}>
-            <div className="pblock" style={{ flex: 1, height: 56 }} />
-            <div className="pblock" style={{ flex: 1, height: 56 }} />
-          </div>
-          <div className="pblock accent-p" style={isAndroid ? {} : { borderColor: 'rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)' }} />
-          <div className="pbar" style={{ width: '40%' }} />
+        <div className={`phone-screen-lg ${isAndroid ? 'android-screen' : 'ios-screen'}`} style={{ padding: 0 }}>
+          <img 
+            src={isAndroid ? "/android_ui.jpg" : "/ios_ui.jpg"} 
+            alt={`${isAndroid ? 'Android' : 'iOS'} UI`} 
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          />
         </div>
       </motion.div>
     </div>
